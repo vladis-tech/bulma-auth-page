@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Sign Up</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .hero.is-primary {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+    .box {
+      box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+      border-radius: 8px;
+    }
+    .tabs li.is-active a {
+      border-bottom-color: #7957d5;
+      color: #7957d5;
+    }
+    .auth-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    .auth-image {
+      background-image: url('/api/placeholder/800/600');
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px 0 0 8px;
+    }
+    @media screen and (max-width: 768px) {
+      .auth-image {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="auth-page">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <div class="box p-0">
+            <div class="columns m-0 is-gapless">
+              <!-- Image Side -->
+              <div class="column is-5 auth-image">
+              </div>
+              
+              <!-- Form Side -->
+              <div class="column">
+                <div class="p-5">
+                  <div class="has-text-centered mb-5">
+                    <h1 class="title is-3">Welcome</h1>
+                    <p class="subtitle is-6 has-text-grey">Sign in to continue to your account</p>
+                  </div>
+
+                  <div class="tabs is-centered is-toggle is-toggle-rounded mb-5">
+                    <ul>
+                      <li class="is-active" id="login-tab">
+                        <a>
+                          <span class="icon is-small"><i class="fas fa-sign-in-alt"></i></span>
+                          <span>Login</span>
+                        </a>
+                      </li>
+                      <li id="signup-tab">
+                        <a>
+                          <span class="icon is-small"><i class="fas fa-user-plus"></i></span>
+                          <span>Sign Up</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <!-- Login Form -->
+                  <div id="login-form">
+                    <form>
+                      <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control has-icons-left">
+                          <input class="input" type="email" placeholder="e.g. johnsmith@example.com">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control has-icons-left">
+                          <input class="input" type="password" placeholder="********">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <div class="field">
+                        <div class="control">
+                          <label class="checkbox">
+                            <input type="checkbox">
+                            Remember me
+                          </label>
+                        </div>
+                      </div>
+                      
+                      <div class="field mt-5">
+                        <div class="control">
+                          <button class="button is-primary is-fullwidth">Login</button>
+                        </div>
+                      </div>
+
+                      <div class="has-text-centered mt-4">
+                        <a href="#" class="has-text-link">Forgot password?</a>
+                      </div>
+
+                      <div class="is-divider my-5" data-content="OR"></div>
+
+                      <div class="buttons are-medium is-centered">
+                        <button class="button is-light">
+                          <span class="icon">
+                            <i class="fab fa-google"></i>
+                          </span>
+                          <span>Google</span>
+                        </button>
+                        <button class="button is-light">
+                          <span class="icon">
+                            <i class="fab fa-facebook"></i>
+                          </span>
+                          <span>Facebook</span>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  
+                  <!-- Sign Up Form (Hidden by default) -->
+                  <div id="signup-form" style="display: none;">
+                    <form>
+                      <div class="field">
+                        <label class="label">Full Name</label>
+                        <div class="control has-icons-left">
+                          <input class="input" type="text" placeholder="e.g. John Smith">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control has-icons-left">
+                          <input class="input" type="email" placeholder="e.g. johnsmith@example.com">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <div class="field">
+                        <label class="label">Password</label>
+                        <div class="control has-icons-left">
+                          <input class="input" type="password" placeholder="********">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                        </div>
+                        <p class="help">Password must be at least 8 characters</p>
+                      </div>
+                      
+                      <div class="field">
+                        <label class="label">Confirm Password</label>
+                        <div class="control has-icons-left">
+                          <input class="input" type="password" placeholder="********">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <div class="field">
+                        <div class="control">
+                          <label class="checkbox">
+                            <input type="checkbox">
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                          </label>
+                        </div>
+                      </div>
+                      
+                      <div class="field mt-5">
+                        <div class="control">
+                          <button class="button is-primary is-fullwidth">Sign Up</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginTab = document.getElementById('login-tab');
+      const signupTab = document.getElementById('signup-tab');
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+
+      loginTab.addEventListener('click', () => {
+        loginTab.classList.add('is-active');
+        signupTab.classList.remove('is-active');
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+      });
+
+      signupTab.addEventListener('click', () => {
+        signupTab.classList.add('is-active');
+        loginTab.classList.remove('is-active');
+        signupForm.style.display = 'block';
+        loginForm.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
